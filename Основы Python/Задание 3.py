@@ -1,5 +1,5 @@
-Month = str(input("Месяц рождения:"))
-Day = str(input("Дата рождения:"))
+Month = input("Месяц рождения:")
+Day = input("Дата рождения:")
 if ((Month == 'Декабрь') and (Day >= '23')) or ((Month == 'Январь') and (Day <= '20')):
     zodiac = "Козерог"
 elif (Month == 'Январь' and Day >= '21') or (Month == 'Февраль' and Day <= '19'):
