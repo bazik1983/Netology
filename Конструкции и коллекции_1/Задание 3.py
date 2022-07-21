@@ -1,4 +1,3 @@
-i = 0
 boys = input('Введите имена парней через запятую: ').split(',')
 girls = input('Введите имена девушек через запятую: ').split(',')
 if len(boys) != len(girls):
