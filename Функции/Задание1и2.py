@@ -64,14 +64,13 @@ def del_shelf():
     Функция удаляе полку, если она не пустая
     """
     shelf = input("Введите номер полки: ")
-    if shelf not in directories.keys():
-        print(f"Такой полки не существует. Текущий перечень полок:' {list(directories.keys())}")
-    elif directories.keys():
-        print(
-            f"На полке есть документы, удалите их перед удалением полки. Текущий перечень полок:' {list(directories.keys())}")
-    else:
-        del directories[0]
-        print(f"Полка удалена. Текущий перечень полок:' {list(directories.keys())}")
+    if shelf in directories:
+        if directories[shelf]:
+            return print(f"На полке есть документы, удалите их перед удалением полки. Текущий перечень полок:' {list(directories.keys())}")
+        del directories[shelf]
+        return print(f"Полка удалена. Текущий перечень полок:' {list(directories.keys())}")
+    return print(f"Такой полки не существует. Текущий перечень полок:' {list(directories.keys())}")
+
 
 
 def main():
