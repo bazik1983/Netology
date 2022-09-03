@@ -52,11 +52,11 @@ def add_shelf():
     shelf = input("Введите номер полки: ")
     for i in directories.items():
         if shelf in i[0]:
-            print(f"Такая полка уже существует. Текущий перечень полок: {list(directories.keys())}")
+            print(f"Такая полка уже существует. Текущий перечень полок: {','.join(list(directories.keys()))}")
             break
     else:
         directories[shelf] = []
-        print(f"Полка добавлена. Текущий перечень полок: {list(directories.keys())}")
+        print(f"Полка добавлена. Текущий перечень полок: {','.join(list(directories.keys()))}")
 
 
 def del_shelf():
@@ -66,10 +66,10 @@ def del_shelf():
     shelf = input("Введите номер полки: ")
     if shelf in directories:
         if directories[shelf]:
-            return print(f"На полке есть документы, удалите их перед удалением полки. Текущий перечень полок: {list(directories.keys())}")
+            return print(f"На полке есть документы, удалите их перед удалением полки. Текущий перечень полок: {','.join(list(directories.keys()))}")
         del directories[shelf]
-        return print(f"Полка удалена. Текущий перечень полок: {list(directories.keys())}")
-    return print(f"Такой полки не существует. Текущий перечень полок: {list(directories.keys())}")
+        return print(f"Полка удалена. Текущий перечень полок: {','.join(list(directories.keys()))}")
+    return print(f"Такой полки не существует. Текущий перечень полок: {','.join(list(directories.keys()))}")
 
 
 def add_doc():
@@ -112,7 +112,7 @@ def move_doc():
     doc_existence = False
 
     if shelf not in directories:
-        return print(f"Полки не существует. Текущий перечень полок: {list(directories.keys())}")
+        return print(f"Полки не существует. Текущий перечень полок: {','.join(list(directories.keys()))}")
 
     for key, value in directories.items():
         if doc_number in value:
